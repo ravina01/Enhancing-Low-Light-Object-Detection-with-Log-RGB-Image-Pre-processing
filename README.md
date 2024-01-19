@@ -24,6 +24,9 @@ Each location on the feature map acts as an anchor point, essentially forming an
 
 ### 4. Anchor Boxes and Offsets -
 Positive anchor boxes contain an object and negative anchor boxes do not. We only need to sample a few anchor boxes for training. To sample Fig. 4. Anchor Box Positive and Negative Anchor Boxes positive anchor boxes, we select the anchor boxes that have an IoU (Intersection over union) more than 0.7 with any of the ground truth boxes. To sample negative anchor boxes, we select the anchor boxes that have an IoU less than 0.3 with any of the ground truth boxes.
+![ Anchor Box](https://github.com/ravina01/Enhancing-Low-Light-Object-Detection-with-Log-RGB-Image-Pre-processing/blob/main/Assets/Images%20In%20the%20report/anchor_boxes.png)
+![Positive and Negative Anchor Boxes](https://github.com/ravina01/Enhancing-Low-Light-Object-Detection-with-Log-RGB-Image-Pre-processing/blob/main/Assets/Images%20In%20the%20report/pos_neg_anchor_box.png)
+
 
 ### 5. Building the Two-stage Model Architecture -
 1. First stage - Region Proposal Network The region proposal network is the stage 1 of the detector which takes the feature map and produces region proposals. Here we combine the backbone network, the sampling module, and the proposal module into the region proposal network. During both training and inference, the RPN produces scores and offsets for all the anchor boxes. During inference, we select the anchor boxes with scores above a given threshold and generate proposals using the predicted offsets.
@@ -41,4 +44,5 @@ mAP@0.5:0.05:0.95 = 0.61831266
 ### 3. Log RGB Train:
 mAP@0.5:0.05:0.95 = 0.62789305
 
-For more results read the report - 
+For more results read the report - [Read Detail Report](https://github.com/ravina01/Enhancing-Low-Light-Object-Detection-with-Log-RGB-Image-Pre-processing/blob/main/Enhancing_Low_Light_Object_Detection_with_Log_RGB_Image_Pre_processing.pdf)
+
